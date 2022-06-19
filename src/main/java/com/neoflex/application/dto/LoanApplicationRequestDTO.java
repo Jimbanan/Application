@@ -27,6 +27,7 @@ public class LoanApplicationRequestDTO {
     @Min(value = 6, message = "Минимальный срок кредита: 6 месяцев")
     private Integer term;
 
+
     @NotNull
     @Size(min = 2, max = 30, message = "Длина имени: 2-30 символов")
     private String firstName;

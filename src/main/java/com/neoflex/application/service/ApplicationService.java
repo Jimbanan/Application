@@ -10,13 +10,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
 @Slf4j
+@RequiredArgsConstructor
 public class ApplicationService {
 
     private final DealMC dealMC;
+    private final Scoring scoring;
 
     public List<LoanOfferDTO> getOffersList(LoanApplicationRequestDTO loanApplicationRequestDTO) {
+        scoring.checkScoringData(loanApplicationRequestDTO);
+
         log.info("getOffersList(): List<LoanOfferDTO> Получение списка оферов");
         return dealMC.getOffersListDeal(loanApplicationRequestDTO);
     }
