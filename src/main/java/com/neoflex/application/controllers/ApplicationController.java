@@ -22,14 +22,14 @@ public class ApplicationController {
 
     @PostMapping
     @Operation(description = "Формирование списка кредитных предложение")
-    List<LoanOfferDTO> application(@RequestBody LoanApplicationRequestDTO loanApplicationRequestDTO) {
+    public List<LoanOfferDTO> application(@RequestBody LoanApplicationRequestDTO loanApplicationRequestDTO) {
         log.info("application(): List<LoanOfferDTO> Получение списка LoanOfferDTO из MC Deal");
         return applicationService.getOffersList(loanApplicationRequestDTO);
     }
 
     @PutMapping("/offer")
     @Operation(description = "Добавление полученного офера в БД")
-    void offer(@RequestBody LoanOfferDTO loanOfferDTO) {
+    public void offer(@RequestBody LoanOfferDTO loanOfferDTO) {
         applicationService.confirmOffer(loanOfferDTO);
         log.info("offer(): void Передача выбранного офера в MC Deal");
     }
