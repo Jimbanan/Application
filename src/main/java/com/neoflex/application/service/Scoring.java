@@ -57,7 +57,7 @@ public class Scoring {
         }
 
 
-        if (loanApplicationRequestDTO.getLastName() == null) {
+        if (loanApplicationRequestDTO.getMiddleName() == null) {
             log.info("Не указано отчество");
             errors.add("Не указано отчество");
         } else if (loanApplicationRequestDTO.getMiddleName().length() > 0) {

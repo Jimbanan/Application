@@ -25,8 +25,8 @@ public class ApplicationService {
     }
 
     public void confirmOffer(LoanOfferDTO loanOfferDTO) {
-        dealMC.offerConfirmDeal(loanOfferDTO);
         log.info("getOffersList(): void Передача выбранного офера");
+        dealMC.offerConfirmDeal(loanOfferDTO);
     }
 
 }

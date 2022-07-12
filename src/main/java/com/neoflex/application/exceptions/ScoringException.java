@@ -22,10 +22,10 @@ public class ScoringException extends RuntimeException {
     public ScoringException(List<String> error) {
         super(error.toString());
         this.error = error;
-        ScoringErrors();
+        scoringErrors();
     }
 
-    public ResponseEntity<String> ScoringErrors() {
+    public ResponseEntity<String> scoringErrors() {
         return new ResponseEntity<>(error.toString(), HttpStatus.BAD_REQUEST);
     }
 
