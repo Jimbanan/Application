@@ -13,20 +13,20 @@ public class ScoringException extends RuntimeException {
 
     private static final long serialVersionUID = 1L;
 
-    List<String> error;
+    private List<String> errors;
 
     public ScoringException(String message) {
         super(message);
     }
 
-    public ScoringException(List<String> error) {
-        super(error.toString());
-        this.error = error;
+    public ScoringException(List<String> errors) {
+        super(errors.toString());
+        this.errors = errors;
         scoringErrors();
     }
 
     public ResponseEntity<String> scoringErrors() {
-        return new ResponseEntity<>(error.toString(), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(errors.toString(), HttpStatus.BAD_REQUEST);
     }
 
 }
