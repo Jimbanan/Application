@@ -102,7 +102,7 @@ public class Scoring {
             errors.add("Длина номера паспорта: 6 символа");
         }
 
-        if (errors.size() > 0) {
+        if (!errors.isEmpty()) {
             log.info("checkScoringData(): void Передача ошибок");
             throw new ScoringException(errors);
         }
